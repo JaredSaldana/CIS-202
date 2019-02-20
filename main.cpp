@@ -1,25 +1,15 @@
 /*
-   File: main.cpp
-   Description: 
-   Author:
-   Email:
+    File: main.cpp
+    Description: 
+    Author:
+    Email:
 */
 #include <iostream>
-#include "student.h"
+#include <string>
 
 using namespace std;
 
 int main()
 {
-   Student Jared;
-   {
-      
-   }
-   
-   Jared.addName("Jared")
-   {
-      name = new_Name;
-   }
-  
-   return 0;
+    return 0;
 }
