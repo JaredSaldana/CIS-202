@@ -11,7 +11,7 @@ using namespace std;
 Student::Student()
 {
     for (int i = 0; i < number_of_grades; ++i)
-	    delete all_Grades[i];
+        delete all_Grades[i];
     delete all_Grades;
 }
 
@@ -41,7 +41,7 @@ double Student::get_GPA()
     else
     {
         for (int i = 0; i < number_of_grades; ++i)
-	    GPA += all_Grades[i]->get_numeric_grade();
+            GPA += all_Grades[i]->get_numeric_grade();
         GPA = GPA / number_of_grades;
     }
     return GPA;
