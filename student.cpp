@@ -1,10 +1,25 @@
+/*
+    File: student.cpp
+    Description: P5.9
+    Author: Jared Saldana
+    Email: jareds6070@student.vvc.edu
+*/
 #include "student.h"
+#include <string>
+using namespace std;
+
+Student::Student()
+{
+    for (int i = 0; i < number_of_grades; ++i)
+	    delete all_Grades[i];
+    delete all_Grades;
+}
 
 Student::Student(string students_name)
 {
     this->name = students_name;
-    this->number_of_quizzes = 0;
-    this->total_score = 0;
+    this->number_of_grades = 0;
+    this->all_Grades = new Grade*[200];
 }
 
 string Student::get_name()
@@ -12,19 +27,22 @@ string Student::get_name()
     return name;
 }
 
-void Student::add_quiz(int score)
+void Student::add_grade(string grade)
 {
-    total_score += score;
-    number_of_quizzes++;
-    return total_score;
+    all_Grades[number_of_grades] = new Grade(grade);
+    number_of_grades++;
 }
 
-int Student::get_total_score()
+double Student::get_GPA()
 {
-    return total_score;
-}
-
-double Student::get_average_score()
-{
-    return ((double) total_score) / number_of_quizzes;
+    double GPA = 0;
+    if (number_of_grades == 0)
+        return -1;
+    else
+    {
+        for (int i = 0; i < number_of_grades; ++i)
+	    GPA += all_Grades[i]->get_numeric_grade();
+        GPA = GPA / number_of_grades;
+    }
+    return GPA;
 }
