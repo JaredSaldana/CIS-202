@@ -8,44 +8,35 @@
 #include <string>
 using namespace std;
 
-Grade::Grade(string grade);
+Grade::Grade() : grade_score("")
 {
-    this->named_grade = grade;
-    this->numeric_grade = convert_named_to_numeric(new_grade);
+    
 }
 
-double Grade::get_numeric_grade()
+Grade::Grade(std::string new_grade) : grade_score(new_grade)
 {
-    return numeric_grade;
+    
 }
 
-string Grade::get_named_grade();
+double Grade::convert_grade() const
 {
-    return named_grade;
-}
-
-double Grade::convert_named_to_numeric(string grade)
-{
-    double n, decimal;
-    if (grade[1] == '+')
-        decimal = 0.3;
-    else if (grade[1] == '-')
-        decimal = -0.3;
-    else
-        decimal = 0;
-	
-    switch (grade[0])
-    {
-    case 'A': n = 4;
-        break;
-    case 'B': n = 3;
-        break;
-    case 'C': n = 2;
-        break;
-    case 'D': n = 1;
-        break;
-    default: n = 0;
-        break;
-    }
-    return n + decimal;
+    std::string letter_grade = grade_score;
+    std::string letter = letter_grade.substr(0, 1);
+    std::string sign = letter_grade.substr(1, 2);
+    double grade;
+    if (letter == "A")
+        grade = 4;
+    else if (letter == "B")
+        grade = 3;
+    else if (letter == "C")
+        grade = 2;
+    else if (letter == "D")
+        grade = 1;
+    else if (letter == "F")
+        grade = 0;
+    if (sign == "+" && letter != "A" && letter != "F")
+        grade = grade + 0.3;
+    else if (sign == "-" && letter != "F")
+        grade = grade - 0.3;
+    return grade;
 }
