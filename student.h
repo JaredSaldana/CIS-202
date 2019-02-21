@@ -6,20 +6,24 @@
 */
 #ifndef STUDENT_H
 #define STUDENT_H
-#include "grade.h"
 #include <string>
+#include "grade.h"
+using namespace std;
 
 class Student
 {
 public:
-    Student();
-    Student(string students_name);
-    string get_name();
-    void add_grade(string grade);
-    double get_GPA();
+	Student();
+	Student(std::string student_name, double student_total_score, Grade student_grade);
+	std::string get_name() const;
+    void add_quiz(double quiz_score);
+	double get_total_score() const;
+	double get_average_score(int number_quizes) const;
+	void add_grade(Grade new_grade);
+	double get_GPA() const;
 private:
-    string name;
-    Grade** all_Grades;
-    int number_of_grades;	
+	std::string name;
+	double total_score;
+	Grade grade;
 };
 #endif
