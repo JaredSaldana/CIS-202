@@ -12,12 +12,10 @@ using namespace std;
 class Grade
 {
 public:
-    Grade(string grade);
-    double get_numeric_grade();
-    string get_named_grade();
+    Grade();
+    Grade(std::string new_grade);
+    double convert_grade() const;
 private:
-    string named_grade;
-    double numeric_grade;
-    double convert_named_to_numeric(string grade);
+    std::string grade_score;
 };
 #endif
