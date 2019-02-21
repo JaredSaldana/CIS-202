@@ -12,7 +12,7 @@ using namespace std;
 
 int main()
 {
-    Student Jared;
+    Student Jared = new Student;
     
     return 0;
 }
