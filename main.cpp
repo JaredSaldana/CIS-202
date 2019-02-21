@@ -6,10 +6,13 @@
 */
 #include <iostream>
 #include <string>
-
+#include "student.h"
+#include "grade.h"
 using namespace std;
 
 int main()
 {
+    Student Jared;
+    
     return 0;
 }
