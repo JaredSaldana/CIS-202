@@ -12,3 +12,8 @@ void Person::set_name(const string &name)
 {
     m_name = name;
 }
+
+string Person::get_name()
+{
+    return m_name;
+}
