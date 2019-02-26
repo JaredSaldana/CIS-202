@@ -12,11 +12,6 @@ using namespace std;
 
 int main()
 {
-    Student Jared = new Student;
-    
-    Jared.Student("Jared");
-    
-    get.name();
     
     return 0;
 }
