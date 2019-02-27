@@ -11,4 +11,12 @@ void Address::set_street(tring &street)
     m_street = street;
 }
 
-string Address
+string Address::get_street()
+{
+    return m_street:
+}
+
+void Address::add_person(Person *p)
+{
+    m_person.push_back(p);
+}
