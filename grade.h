@@ -13,9 +13,9 @@ class Grade
 {
 public:
     Grade();
-    Grade(std::string new_grade);
+    Grade(string new_grade);
     double convert_grade();
 private:
-    std::string grade_score;
+    string grade_score;
 };
 #endif
