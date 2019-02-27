@@ -9,11 +9,9 @@
 using namespace std;
 
 Grade::Grade()
-    :grade_score("")
 {}
 
 Grade::Grade(string new_grade)
-    :grade_score(new_grade)
 {}
 
 double Grade::convert_grade() const
