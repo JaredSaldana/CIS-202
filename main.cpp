@@ -12,6 +12,7 @@ using namespace std;
 
 int main()
 {
+    Student new_student;
     
     return 0;
 }
