@@ -13,12 +13,12 @@ Student::Student()
     total_score = 0;
 }
 
-void Studnet::set_name(string new_name) const
+void Student::set_name(string new_name)
 {
     name = new_name;
 }
 
-string Student::get_name() const
+string Student::get_name()
 {
     return name;
 }
@@ -28,12 +28,12 @@ void Student::add_quiz(double quiz_score)
     total_score = total_score + quiz_score;
 }
 
-double Student::get_total_score() const
+double Student::get_total_score()
 {
     return total_score;
 }
 
-double Student::get_average_score(int number_quizes) const
+double Student::get_average_score(int number_quizes)
 {
     double average = (total_score * 1.0) / number_quizes;
     return average;
@@ -44,7 +44,7 @@ void Student::add_grade(Grade new_grade)
     grade = new_grade;
 }
 
-double Student::get_GPA() const
+double Student::get_GPA()
 {
     return grade.convert_grade();
 }
