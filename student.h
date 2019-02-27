@@ -13,17 +13,17 @@ using namespace std;
 class Student
 {
 public:
-	Student();
-	Student(std::string student_name, double student_total_score, Grade student_grade);
-	std::string get_name() const;
+    Student();
+    string get_name() const;
+    void set_name(string new_name) const;
     void add_quiz(double quiz_score);
-	double get_total_score() const;
-	double get_average_score(int number_quizes) const;
-	void add_grade(Grade new_grade);
-	double get_GPA() const;
+    double get_total_score() const;
+    double get_average_score(int number_quizes) const;
+    void add_grade(Grade new_grade);
+    double get_GPA() const;
 private:
-	std::string name;
-	double total_score;
-	Grade grade;
+    string name;
+    double total_score;
+    Grade grade;
 };
 #endif
