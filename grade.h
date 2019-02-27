@@ -14,7 +14,7 @@ class Grade
 public:
     Grade();
     Grade(std::string new_grade);
-    double convert_grade() const;
+    double convert_grade();
 private:
     std::string grade_score;
 };
