@@ -10,39 +10,41 @@ using namespace std;
 
 Student::Student()
 {
-    for (int i = 0; i < number_of_grades; ++i)
-        delete all_Grades[i];
-    delete all_Grades;
+    total_score = 0;
 }
 
-Student::Student(string students_name)
+void Studnet::set_name(string new_name) const
 {
-    this->name = students_name;
-    this->number_of_grades = 0;
-    this->all_Grades = new Grade*[200];
+    name = new_name;
 }
 
-string Student::get_name()
+string Student::get_name() const
 {
     return name;
 }
 
-void Student::add_grade(string grade)
+void Student::add_quiz(double quiz_score)
 {
-    all_Grades[number_of_grades] = new Grade(grade);
-    number_of_grades++;
+    total_score = total_score + quiz_score;
 }
 
-double Student::get_GPA()
+double Student::get_total_score() const
 {
-    double GPA = 0;
-    if (number_of_grades == 0)
-        return -1;
-    else
-    {
-        for (int i = 0; i < number_of_grades; ++i)
-            GPA += all_Grades[i]->get_numeric_grade();
-        GPA = GPA / number_of_grades;
-    }
-    return GPA;
+    return total_score;
+}
+
+double Student::get_average_score(int number_quizes) const
+{
+    double average = (total_score * 1.0) / number_quizes;
+    return average;
+}
+
+void Student::add_grade(Grade new_grade)
+{
+    grade = new_grade;
+}
+
+double Student::get_GPA() const
+{
+    return grade.convert_grade();
 }
