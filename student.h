@@ -14,16 +14,16 @@ class Student
 {
 public:
     Student();
-    string get_name() const;
-    void set_name(string new_name) const;
+    void set_name(string new_name);
+    string get_name();
     void add_quiz(double quiz_score);
-    double get_total_score() const;
-    double get_average_score(int number_quizes) const;
+    double get_total_score();
+    double get_average_score(int number_quizes);
     void add_grade(Grade new_grade);
-    double get_GPA() const;
+    double get_GPA();
 private:
     string name;
     double total_score;
-    Grade grade;
+    Grade g;
 };
 #endif
