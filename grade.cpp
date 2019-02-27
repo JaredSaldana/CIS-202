@@ -14,7 +14,7 @@ Grade::Grade()
 Grade::Grade(string new_grade)
 {}
 
-double Grade::convert_grade() const
+double Grade::convert_grade()
 {
     string letter_grade = grade_score;
     string letter = letter_grade.substr(0, 1);
